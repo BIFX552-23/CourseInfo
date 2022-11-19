@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>CourseInfo</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">CourseInfo</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="welcome-to-bifx-553---bioinformatics-data-skills" class="level1">
+<h1>Welcome to BIFX 553 - Bioinformatics Data Skills</h1>
+<section id="syllabus" class="level2">
+<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
+<section id="course-description" class="level3">
+<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
+<p>This class provides an introduction to applied data science skills needed by bioinformatics professionals. A focus will be placed on reproducible bioinformatics research and will include the following topics and tools: beginning to intermediate use of the Unix command line, working with remote computing resources, version tracking, R and Bioconductor, tools for manipulating sequence data, and creation of pipelines.</p>
+<ul>
+<li>Instructor: Randall Johnson, PhD</li>
+<li>Office hours: Office hours will be held immediately before and after labs. Drop me a note to schedule a virtual office hour at another time.</li>
+<li>Prerequisites: BIFX 503</li>
+<li>Textbooks: We will not be using a textbook this term, but you may find the following helpful. All are freely available online.
+<ul>
+<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
+<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
+<li><a href="https://r-pkgs.org/">R Packages</a></li>
+</ul></li>
+<li>Communications: Course communications will be posted on <a href="https://hood.blackboard.com">Blackboard</a>.</li>
+<li>Code of Conduct: We want to foster a safe, enjoyable and productive learning environment. People like you add value to our program. To meet this end, all participants will be expected to follow the <a href="code_of_conduct.html">course code of conduct</a> located in the course documents on Blackboard.</li>
+<li>Accessibility: As the instructor of this course, I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me and the Office for Accessibility Services, 301-696-3421, gmuer@hood.edu.</li>
+</ul>
+</section>
+<section id="learning-objectives" class="level3">
+<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
+<p>On completion of this course, students should be comfortable with the following:</p>
+<ul>
+<li>Use of R and Bioconductor to perform bioinformatic analysis tasks</li>
+<li>Use of the Unix command line to manipulate data and perform bioinformatic analysis tasks</li>
+<li>Logging into and using remote computing resources</li>
+<li>Working with version controlled code repositories in a collaborative work environment</li>
+<li>Stitching a series of commands and/or programs together into a reusable pipeline</li>
+</ul>
+</section>
+<section id="coding-demos-and-in-class-labs" class="level3">
+<h3 class="anchored" data-anchor-id="coding-demos-and-in-class-labs">Coding Demos and In-Class Labs</h3>
+<p>Recorded coding demos will be posted weekly, and in-class coding labs will be scheduled on Thursday evenings throughout the term at 5:30 PM (unless otherwise specified). Because Bioinformatics is such a fast-moving field, demos and labs will be based on up-to-date, publicly available material from experts in the <a href="https://datacarpentry.org/">Data Carpentry</a>, <a href="https://software-carpentry.org/">Software Carpentry</a>, and <a href="https://bioc2022.bioconductor.org/">Bioconductor</a> communities.</p>
+</section>
+<section id="homework-and-course-project" class="level3">
+<h3 class="anchored" data-anchor-id="homework-and-course-project">Homework and Course Project</h3>
+<p>There will be homework assignments based on each of the weekly coding demos. This will give you an opportunity to practice what we cover each week. Homework should be completed before class each week.</p>
+<p>Students will develop a repository with examples of the material and techniques we will be covering throughout the course. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.</p>
+</section>
+<section id="grading" class="level3">
+<h3 class="anchored" data-anchor-id="grading">Grading</h3>
+<p>Grades will be based on completion of homework, quizzes and two exams.</p>
+<ul>
+<li>Homework - 25%</li>
+<li>Labs - 25%</li>
+<li>Bioconductor Project - 10%</li>
+<li>Mid-term - 20%</li>
+<li>Final exam - 20%</li>
+</ul>
+<p>Late submissions of any work will be subject to a 5% penalty for each day past the due date. The maximum penalty for late work will be 50%.</p>
+</section>
+<section id="weather" class="level3">
+<h3 class="anchored" data-anchor-id="weather">Weather</h3>
+<p>In the event of severe weather resulting in the closure of Hood College and the cancellation of an in-person lab, the lab will be held virtually at the scheduled time and a recording posted on Blackboard for asynchronous viewing.</p>
+</section>
+<section id="tentative-class-schedule" class="level3">
+<h3 class="anchored" data-anchor-id="tentative-class-schedule">Tentative Class Schedule</h3>
+<div class="cell">
+<div class="cell-output-display">
+<table class="table table-sm table-striped">
+<thead>
+<tr class="header">
+<th style="text-align: right;">Week</th>
+<th style="text-align: left;">Date</th>
+<th style="text-align: left;">Coding Demo</th>
+<th style="text-align: left;">Lab</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1</td>
+<td style="text-align: left;">Aug 26</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/git-novice/">Git</a> (1 - 9)</td>
+<td style="text-align: left;">Class intro, Markdown / Quarto</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">2</td>
+<td style="text-align: left;">Sep 2</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/">R Intro</a> (1-3)</td>
+<td style="text-align: left;">P-Hacking</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">3</td>
+<td style="text-align: left;">Sep 9</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html">Subsetting Data</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html">R Control Flow</a></td>
+<td style="text-align: left;">Epi 4 Bioinfo</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4</td>
+<td style="text-align: left;">Sep 16</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/index.html">R Graphics</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/09-vectorization/index.html">R Vectorization</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/10-functions/index.html">R Functions</a></td>
+<td style="text-align: left;">COVID Data</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">5</td>
+<td style="text-align: left;">Sep 23</td>
+<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/">R Advanced Data</a> (11, 13-14)</td>
+<td style="text-align: left;">RNA-Seq Data</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">6</td>
+<td style="text-align: left;">Sep 30</td>
+<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/bioc-intro/50-joining-tables/index.html">Joining Tables</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/index.html">R Software Tips</a></td>
+<td style="text-align: left;">DockerHub / Shiny</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">7</td>
+<td style="text-align: left;">Oct 7</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Midterm Exam Due</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">8</td>
+<td style="text-align: left;">Oct 14</td>
+<td style="text-align: left;"><a href="https://datacarpentry.org/shell-genomics/">Unix</a> (1 - 4)</td>
+<td style="text-align: left;">Unix lab</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">9</td>
+<td style="text-align: left;">Oct 21</td>
+<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/">Snakemake</a> (1 - 4)</td>
+<td style="text-align: left;">Snakemake Intro</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">10</td>
+<td style="text-align: left;">Oct 28</td>
+<td style="text-align: left;"><a href="https://datacarpentry.org/wrangling-genomics/">Variant Calling Workflow</a> (1 - 4)</td>
+<td style="text-align: left;">Variant Calling Pipeline</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">11</td>
+<td style="text-align: left;">Nov 4</td>
+<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/">Advanced Snakemake</a></td>
+<td style="text-align: left;">Variant Calling Pipeline (cont)</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">12</td>
+<td style="text-align: left;">Nov 11</td>
+<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/bioc-project/index.html">Intro to Bioconductor</a>(1 - 4)</td>
+<td style="text-align: left;">Bioconductor Project</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">13</td>
+<td style="text-align: left;">Nov 17</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Bioconductor Project</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">14</td>
+<td style="text-align: left;">Nov 25</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Thanksgiving (no class)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">15</td>
+<td style="text-align: left;">Dec 2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Project Presentations</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">16</td>
+<td style="text-align: left;">Dec 9</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Exam Due (no class)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

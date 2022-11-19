@@ -13,9 +13,10 @@ knitr::opts_chunk$set(echo = FALSE)
 
 library(knitr)
 library(magrittr)
+library(dplyr)
 ```
 
-# Welcome to BIFX 552 - Bioinformatics Data Skills
+# Welcome to BIFX 553 - Bioinformatics Data Skills
 
 ## Syllabus
 
@@ -24,15 +25,13 @@ library(magrittr)
 This class provides an introduction to applied data science skills needed by bioinformatics professionals. A focus will be placed on reproducible bioinformatics research and will include the following topics and tools: beginning to intermediate use of the Unix command line, working with remote computing resources, version tracking, R and Bioconductor, tools for manipulating sequence data, and creation of pipelines.
 
 -   Instructor: Randall Johnson, PhD
--   Office hours: Office hours will be held during the times listed below, and the class message board on Microsoft Teams will be monitored frequently throughout the week.
-    -   Mondays at 12:00 - 1:00 PM
-    -   Thursdays immediately after labs.
+-   Office hours: Office hours will be held immediately before and after labs. Drop me a note to schedule a virtual office hour at another time.
 -   Prerequisites: BIFX 503
 -   Textbooks: We will not be using a textbook this term, but you may find the following helpful. All are freely available online.
     -   [R for Data Science](https://r4ds.had.co.nz/)
     -   [Advanced R](https://adv-r.hadley.nz/)
     -   [R Packages](https://r-pkgs.org/)
--   Communications: Course communications will be posted on [Blackboard](https://hood.blackboard.com) and [Microsoft Teams](https://teams.microsoft.com/l/team/19%3agbXzrtw2Pdri-U6XHzIJZLeOopnCtqc3hUtH8At9qtE1%40thread.tacv2/conversations?groupId=edc6edd8-2142-46b2-b5ab-cfe30e904980&tenantId=a661a969-6db1-4168-a18c-04d87566e044).
+-   Communications: Course communications will be posted on [Blackboard](https://hood.blackboard.com).
 -   Code of Conduct: We want to foster a safe, enjoyable and productive learning environment. People like you add value to our program. To meet this end, all participants will be expected to follow the [course code of conduct](code_of_conduct.html) located in the course documents on Blackboard.
 -   Accessibility: As the instructor of this course, I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me and the Office for Accessibility Services, 301-696-3421, gmuer\@hood.edu.
 
@@ -54,14 +53,15 @@ Recorded coding demos will be posted weekly, and in-class coding labs will be sc
 
 There will be homework assignments based on each of the weekly coding demos. This will give you an opportunity to practice what we cover each week. Homework should be completed before class each week.
 
-For the course project, students will develop a repository with examples of the material and techniques we will be covering throughout the course, including an R shiny app, a Docker image, and various web pages. In-class lab time will be devoted to this each week, and the final project will be due at the end of the course.
+Students will develop a repository with examples of the material and techniques we will be covering throughout the course. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.
 
 ### Grading
 
 Grades will be based on completion of homework, quizzes and two exams.
 
--   Homework - 30%
--   Class Project - 30%
+-   Homework - 25%
+-   Labs - 25%
+-   Bioconductor Project - 10%
 -   Mid-term - 20%
 -   Final exam - 20%
 
@@ -74,98 +74,115 @@ In the event of severe weather resulting in the closure of Hood College and the 
 ### Tentative Class Schedule
 
 ```{r schedule}
-intro <- '[Class intro](https://BIFX552-22.github.io/CourseInfo)'
+#### Git and GitHub ####
+schedule <- 
+    tibble(Week = 1,
+           Date = 'Aug 26', 
+           `Coding Demo` =       '[Git](https://swcarpentry.github.io/git-novice/) (1 - 9)',
+           Lab           = paste('Class intro,',
+                                 'Markdown / Quarto'))
 
-proj_org <- '[Project Organization](https://datacarpentry.org/organization-genomics/)'
-
-
-### Shell Genomics
-shell_genomics <- 'https://datacarpentry.org/shell-genomics/'
-shell_intro <- paste0('[Introducing the Shell](', shell_genomics, '01-introduction/index.html)')
-unix1       <- paste0('[Unix](',                  shell_genomics, ') (1 - 3)')
-unix2       <- paste0('[Redirection](',           shell_genomics, '04-redirection/index.html)') # 4 only, and not for loops
-
-unix_loops  <- 'Loop and Script Practice'
-unix_regexp <- 'Regular Expressions Practice'
-
-### Wrangling Genomics
-wrangling_genomics <- 'https://datacarpentry.org/wrangling-genomics/'
-variant_calling <- paste0('[Variant Calling Workflow](', wrangling_genomics, '04-variant_calling/index.html) (1 - 4)')
-
-### Git
-git <- '[Git](https://swcarpentry.github.io/git-novice/) (1 - 9)'
-
-
-### R Gapminder
+#### R for Reproducible Research ####
 gapminder <- 'https://swcarpentry.github.io/r-novice-gapminder/'
-Rintro         <- paste0('[R Intro](',         gapminder, ') (1-3)')
-Rdfs           <- paste0('[Subsetting Data](', gapminder, '06-data-subsetting/index.html)')
-Rcontrol       <- paste0('[R Control Flow](',  gapminder, '07-control-flow/index.html)')
-Rgraphics      <- paste0('[R Graphics](',      gapminder, '08-plot-ggplot2/index.html)')
-Rvectorization <- paste0('[R Vectorization](', gapminder, '09-vectorization/index.html)')
-Rfunctions     <- paste0('[R Functions](',     gapminder, '10-functions/index.html)')
-Rdata          <- paste0('[R Advanced Data](', gapminder, ') (11, 13-14)')
-Rknitr         <- paste0('[R Reports](',       gapminder, '15-knitr-markdown/index.html)')
-RswTips        <- paste0('[R Software Tips](', gapminder, '16-wrap-up/index.html)')
+bioc_intro <- 'https://carpentries-incubator.github.io/bioc-intro/'
 
-### Bioconductor Intro to R
-bioc_intro           <- 'https://carpentries-incubator.github.io/bioc-intro/'
-rna_data             <- paste0('[RNA-Seq Data](',         bioc_intro, '40-visualization/index.html)')
-Joining              <- paste0('[Joining Tables](',       bioc_intro, '50-joining-tables/index.html)')
-SummarizedExperiment <- paste0('[SummarizedExperiment](', bioc_intro, '60-next-steps/index.html)')
+schedule <- bind_rows(schedule,
+        tibble(Week = 2,
+               Date = 'Sep 2', 
+               `Coding Demo` = paste0('[R Intro](', gapminder, ') (1-3)'),
+               Lab           = 'P-Hacking'))
 
-### Bioconductor Conference (check each year for updates)
-epi4bioinfo <- '[Epidemiology for bioinformatics](https://bioc2022.bioconductor.org/abstracts/paper43/)' # changed this one a lot - see `labs/04Epi4Bioinfo`
-bioc_annotation <- '[Bioconductor Annotation](https://bioc2022.bioconductor.org/abstracts/paper25/)'
-single_cell <- '[Single-Cell RNA Anlaysis](https://bioc2022.bioconductor.org/abstracts/paper17/)'
-dimensionality <- '[Dimensionality Reduction](https://bioc2021.bioconductor.org/workshops/paper27/)'
+schedule <- bind_rows(schedule,
+        tibble(Week = 3,
+               Date = 'Sep 9', 
+               `Coding Demo` = paste0('[Subsetting Data](', gapminder, '06-data-subsetting/index.html), ',
+                                      '[R Control Flow](',  gapminder, '07-control-flow/index.html)'),
+               Lab           =        'Epi 4 Bioinfo'))
 
-### Other Carpentries
-bioc_proj <- 'https://carpentries-incubator.github.io/bioc-project/index.html' # Bioconductor project
-bioc_proj1 <- paste0('[Intro to Bioconductor](', bioc_proj, ')(1 - 4)')
-bioc_proj2 <- paste0('[Intro to Bioconductor](', bioc_proj, ')(5 - 6)')
+schedule <- bind_rows(schedule,
+        tibble(Week = 4,
+               Date = 'Sep 16', 
+               `Coding Demo` = paste0('[R Graphics](',      gapminder, '08-plot-ggplot2/index.html), ',
+                                      '[R Vectorization](', gapminder, '09-vectorization/index.html), ',
+                                      '[R Functions](',     gapminder, '10-functions/index.html)'),
+               Lab           =        'COVID Data'))
 
-RNA_seq_setup <- '[RNA-seq Intro](https://carpentries-incubator.github.io/bioc-rnaseq/index.html) (1 - 4)'
-RNA_seq_analysis <- '[RNA-seq Analysis](https://carpentries-incubator.github.io/bioc-rnaseq/index.html) (5 - 7)'
+schedule <- bind_rows(schedule,
+        tibble(Week = 5,
+               Date = 'Sep 23', 
+               `Coding Demo` = paste0('[R Advanced Data](', gapminder, ') (11, 13-14)'),
+               Lab           =        'RNA-Seq Data'))
 
-snakemake1 <- '[Snakemake Intro](labs/08Snakemake)'#(https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/)(1 - 3 or 4 as time allows)
-snakemake2 <- '[Advanced Snakemake](https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/)' # (5, 7 - 9) cover 6 in lab 9
+schedule <- bind_rows(schedule,
+        tibble(Week = 6,
+               Date = 'Sep 30', 
+               `Coding Demo` = paste0('[Joining Tables](', bioc_intro, '50-joining-tables/index.html), ',
+                                      '[R Software Tips](', gapminder, '16-wrap-up/index.html)'),
+               Lab           =        'DockerHub / Shiny'))
+
+#### Midterm ####
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 7,
+               Date = 'Oct 7', 
+               `Coding Demo` = '',
+               Lab           = "Midterm Exam Due"))
+
+#### UNIX and Snakemake ####
+shell_genomics <- 'https://datacarpentry.org/shell-genomics/'
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 8,
+               Date = 'Oct 14', 
+               `Coding Demo` = paste0('[Unix](',        shell_genomics, ') (1 - 4)'),
+               Lab           = 'Unix lab'))
+# Lab ideas:
+#  * make login script
+#  * write script to process a bunch of files - batch convert images using imageMagick?
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 9,
+               Date = 'Oct 21', 
+               `Coding Demo` = '[Snakemake](https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/) (1 - 4)',
+               Lab           = 'Snakemake Intro'))
+
+#### Variant Calling and Snakemake ####
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 10,
+               Date = 'Oct 28', 
+               `Coding Demo` = paste0('[Variant Calling Workflow](https://datacarpentry.org/wrangling-genomics/) (1 - 4)'),
+               Lab           = 'Variant Calling Pipeline'))
+# do this over two weeks with https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/05-expansion/index.html in-between, perhaps cover some of https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/06-awkward_programs/index.html between parts 1 and 2 as well.
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 11,
+               Date = 'Nov 4', 
+               `Coding Demo` = '[Advanced Snakemake](https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/)', # (5, 7 - 9) cover 6 in lab
+               Lab           = 'Variant Calling Pipeline (cont)'))
+
+#### Bioconductor ####
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 12,
+               Date = 'Nov 11', 
+               `Coding Demo` = paste0('[Intro to Bioconductor](https://carpentries-incubator.github.io/bioc-project/index.html)(1 - 4)'),
+               Lab           = 'Bioconductor Project'))
+# review Bioconductor project site
+# review Biostrings vignette(s) https://www.bioconductor.org/packages/release/bioc/html/Biostrings.html
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 13:14,
+               Date = paste('Nov', c(17, 25)), 
+               `Coding Demo` = '',
+               Lab           = c('Bioconductor Project', 'Thanksgiving (no class)')))
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 15:16,
+               Date = paste('Dec', c(2, 9)), 
+               `Coding Demo` = '',
+               Lab           = c('Project Presentations', 'Exam Due (no class)')))
 
 
-# coding lab ideas for R (take a look at The Carpentries Lab - https://carpentries-lab.org/)
-
-# make an R package: https://bioconductor.org/help/course-materials/2019/IISA/RPackages.html
-#                    https://github.com/Bioconductor/BiocIntro/blob/ISSA2019/vignettes/RPackages.Rmd
-# Structuring a complex analysis as an R package - https://carpentries-incubator.github.io/lesson-R-packaging/
-
-# Snakemake for Bioinformatics - 
-# Rcwl/RcwlPipelines - https://bioc2022.bioconductor.org/abstracts/paper62/
-
-matrix(dimnames = list(NULL, c('Week', 'Date', 'Topics', 'Lab')),
-       byrow = TRUE, ncol = 4,
-       data = c( 1, 'Aug 25', paste(intro,
-                                    git,            sep = ', '), '[GitHub / DockerHub](labs/01git)',
-                 2, 'Sep  1',       Rintro,                      '[Markdown / Quarto](labs/02markdown)',
-                 3, 'Sep  8', paste(Rdfs,
-                                    Rcontrol,       sep = ', '), '[P-Hacking](labs/03phacking)',
-                 4, 'Sep 15', paste(Rgraphics,
-                                    Rvectorization,
-                                    Rfunctions,     sep = ', '), '[Epi 4 Bioinfo](labs/04Epi4Bioinfo)',
-                 5, 'Sep 22',       Rdata,                       '[COVID Data](labs/05COVID)',
-                 6, 'Sep 29', paste(Joining,
-                                    RswTips,        sep = ', '), '[RNA-Seq Data](labs/06RNA-seq-data/rna-seq-data.html)',
-                 7, 'Oct  6',      'Exam',                       'Midterm Exam',
-                 8, 'Oct 13',      '',                     paste('Exam review',
-                                                                  unix1),
-                 9, 'Oct 20',       unix2,                        snakemake1,
-                10, 'Oct 27',       variant_calling,            '[Variant Calling Pipeline](labs/09variant-calling-pipeline)', # do this over two weeks with https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/05-expansion/index.html in-between, perhaps cover some of https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/06-awkward_programs/index.html between parts 1 and 2 as well. Finish with https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/11-assembly_challenge/index.html during class next week if there is time.
-                11, 'Nov  3',       snakemake2,                  'Variant Calling (cont)',
-                12, 'Nov 10',       bioc_proj1,                  '[Introduction to VariantAnnotation](https://bioconductor.org/packages/release/bioc/html/VariantAnnotation.html)', # start with summary of material covered in bioc_proj2
-                13, 'Nov 17',      'Bioc Project',              'Bioc Project',
-                14, 'Nov 24',      'Bioc Project',              'Thanksgiving, No Class',
-                15, 'Dec  1',      'Bioc Project',         'Presentations and Final Exam',
-                16, 'Dec  8',      'Exam Due',                   '')) %>%
-    kable()
-
-# single_cell,
+kable(schedule)
 ```
