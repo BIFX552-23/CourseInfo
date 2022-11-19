@@ -1,0 +1,17 @@
+.Rproj.user/
+.quarto/
+*.Rproj
+.DS_Store
+.Rhistory
+*.mp4
+*.docx
+*.csv
+*.RData
+*.fq
+*.fa.gz
+
+**/.snakemake/
+Snakefile
+*.log
+
+/.quarto/
