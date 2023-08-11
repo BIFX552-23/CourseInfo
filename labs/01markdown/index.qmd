@@ -1,0 +1,41 @@
+---
+title: "Markdown / Quarto"
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+  docx:
+    date: Aug 24, 2023
+---
+
+## Agenda
+
+-   Welcome and Introductions
+    -   What do you hope to get from this class?
+    -   What was the last book that you read?
+-   Course Overview
+    -   Blackboard tour
+    -   [GitHub](https://github.com/BIFX552-23) tour
+    -   [Syllabus](https://bifx552-23.github.io/CourseInfo)
+    -   [Code of Conduct](https://bifx552-23.github.io/CourseInfo/code_of_conduct)
+-   Today's lab
+    -   [Quarto](https://quarto.org/) tour.
+        -   Quarto [documentation guide](https://quarto.org/docs/guide/).
+        -   [Markdown basics](https://quarto.org/docs/authoring/markdown-basics.html).
+        -   [Formatting code block output](https://quarto.org/docs/output-formats/html-code.html).
+    -   The [iris dataset](https://rpubs.com/moeransm/intro-iris).
+
+## The iris dataset
+
+We are going to start with the iris demo from [Rpubs.com](https://rpubs.com/moeransm/intro-iris), and then we'll go back and make some upgrades to the formatting.
+
+1.  Start by replicating the information and formatting found at <https://rpubs.com/moeransm/intro-iris> (export HTML code). Be sure to leave a note attirbuting the original authors.
+
+2.  Now make it so that the user can opt for [dark mode](https://quarto.org/docs/output-formats/html-themes.html#dark-mode).
+
+3.  Turn the paragraph starting "The `summary()` function gives summary statistics for any dataset." into at tip using a [callout block](https://quarto.org/docs/authoring/callouts.html).
+
+4.  [Fold the code](https://quarto.org/docs/output-formats/html-code.html#folding-code) in the visualization section, such that only the figures are shown by default.
+
+5.  Export your document in [Word format](https://quarto.org/docs/output-formats/ms-word.html) and email it to me.
