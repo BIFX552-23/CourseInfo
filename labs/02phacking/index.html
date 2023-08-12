@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CourseInfo</title>
+<title>P-hacking</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -39,15 +73,16 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CourseInfo</h1>
+<h1 class="title">P-hacking</h1>
 </div>
 
 
@@ -62,180 +97,139 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome-to-bifx-553---bioinformatics-data-skills" class="level1">
-<h1>Welcome to BIFX 553 - Bioinformatics Data Skills</h1>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<section id="course-description" class="level3">
-<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
-<p>This class provides an introduction to applied data science skills needed by bioinformatics professionals. A focus will be placed on reproducible bioinformatics research and will include the following topics and tools: beginning to intermediate use of the Unix command line, working with remote computing resources, version tracking, R and Bioconductor, tools for manipulating sequence data, and creation of pipelines.</p>
+<section id="agenda" class="level2">
+<h2 class="anchored" data-anchor-id="agenda">Agenda</h2>
 <ul>
-<li>Instructor: Randall Johnson, PhD</li>
-<li>Office hours: Office hours will be held immediately before and after labs. Drop me a note to schedule a virtual office hour at another time.</li>
-<li>Prerequisites: BIFX 503</li>
-<li>Textbooks: We will not be using a textbook this term, but you may find the following helpful. All are freely available online.
+<li>Today’s lab
 <ul>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
-<li><a href="https://r-pkgs.org/">R Packages</a></li>
+<li>What is p-hacking?</li>
+<li><a href="https://shinyapps.org/apps/p-hacker/">Train your p-hacking skills!</a></li>
 </ul></li>
-<li>Communications: Course communications will be posted on <a href="https://hood.blackboard.com">Blackboard</a>.</li>
-<li>Code of Conduct: We want to foster a safe, enjoyable and productive learning environment. People like you add value to our program. To meet this end, all participants will be expected to follow the <a href="code_of_conduct.html">course code of conduct</a> located in the course documents on Blackboard.</li>
-<li>Accessibility: As the instructor of this course, I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me and the Office for Accessibility Services, 301-696-3421, gmuer@hood.edu.</li>
 </ul>
 </section>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<p>On completion of this course, students should be comfortable with the following:</p>
+<section id="what-is-p-hacking" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-p-hacking">What is p-hacking?</h2>
+<p>P-hacking is the introduction of bias into a study or experiment that increases the likelihood of small p-values independent of any “real” correlation between the measured variables and the outcome of interest.</p>
+<p>Did you know that the per capita cheese consumption correlates with the number of people who died by becoming tangled in their bed sheets between 1999 and 2009?</p>
+<p>Did you know that the total revenue generated by arcades correlates with the number of computer science doctorates awarded in the US between 1999 and 2009?</p>
+<p>You can check out these and many other “interesting” results on Tyler Vigen’s website, <a href="https://www.tylervigen.com/spurious-correlations">Spurious correlations</a>. These facts are intriguing until you look a little closer into how he discovered these factoids. He basically took every statistic he could find between 1999 and 2009, from death rates, to consumer trends, to spending, and compared them all with each other. He has found some really entertaining bogus correlations.</p>
+<p>When it comes down to it, if you really want to make a case with data, you can hack your way to a story without too much work. Let’s say we want to tell a story about what makes a great data scientist.</p>
 <ul>
-<li>Use of R and Bioconductor to perform bioinformatic analysis tasks</li>
-<li>Use of the Unix command line to manipulate data and perform bioinformatic analysis tasks</li>
-<li>Logging into and using remote computing resources</li>
-<li>Working with version controlled code repositories in a collaborative work environment</li>
-<li>Stitching a series of commands and/or programs together into a reusable pipeline</li>
-</ul>
-</section>
-<section id="coding-demos-and-in-class-labs" class="level3">
-<h3 class="anchored" data-anchor-id="coding-demos-and-in-class-labs">Coding Demos and In-Class Labs</h3>
-<p>Recorded coding demos will be posted weekly, and in-class coding labs will be scheduled on Thursday evenings throughout the term at 5:30 PM (unless otherwise specified). Because Bioinformatics is such a fast-moving field, demos and labs will be based on up-to-date, publicly available material from experts in the <a href="https://datacarpentry.org/">Data Carpentry</a>, <a href="https://software-carpentry.org/">Software Carpentry</a>, and <a href="https://bioc2023.bioconductor.org/">Bioconductor</a> communities.</p>
-</section>
-<section id="homework-and-course-project" class="level3">
-<h3 class="anchored" data-anchor-id="homework-and-course-project">Homework and Course Project</h3>
-<p>There will be homework assignments based on each of the weekly coding demos. This will give you an opportunity to practice what we cover each week. Homework should be completed before class each week.</p>
-<p>Students will develop a repository with examples of the material and techniques we will be covering throughout the course. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.</p>
-</section>
-<section id="grading" class="level3">
-<h3 class="anchored" data-anchor-id="grading">Grading</h3>
-<p>Grades will be based on completion of homework, quizzes and two exams.</p>
+<li>Let’s start by sending out a survey to all of our data scientist friends, asking:
 <ul>
-<li>Homework - 25%</li>
-<li>Labs - 25%</li>
-<li>Bioconductor Project - 10%</li>
-<li>Mid-term - 20%</li>
-<li>Final exam - 20%</li>
+<li>Age</li>
+<li>Gender</li>
+<li>Favorite color</li>
+<li>Shoe size</li>
+<li>Hair color</li>
+<li>Wedding ring size</li>
+<li>Number of milkshakes eaten each month</li>
+<li>Distance to the nearest Walmart</li>
+</ul></li>
+<li>We’ll walk up and down Carroll Creek, asking “random” passersby to respond to the same survey.</li>
+<li>If we don’t find any “significant” correlations, we’ll simply come up with some additional questions until we find something that stands out.</li>
 </ul>
-<p>Late submissions of any work will be subject to a 5% penalty for each day past the due date. The maximum penalty for late work will be 50%.</p>
+<p>It will not take long for us to find a story - perhaps we’ll discover that drinking as few as three extra beers during each full moon will make us better data scientists!</p>
 </section>
-<section id="weather" class="level3">
-<h3 class="anchored" data-anchor-id="weather">Weather</h3>
-<p>In the event of severe weather resulting in the closure of Hood College and the cancellation of an in-person lab, the lab will be held virtually at the scheduled time and a recording posted on Blackboard for asynchronous viewing.</p>
+<section id="p-hacking-practice" class="level2">
+<h2 class="anchored" data-anchor-id="p-hacking-practice">P-hacking practice</h2>
+<p>For this part of the lab, we will be using the <a href="https://shinyapps.org/apps/p-hacker/">p-hacker</a> app developed by Felix Schönbrodt.</p>
+<ol type="1">
+<li>Start by picking experimental and control groups. For my research, I’d like to find out what makes people good at data science!
+<ul>
+<li>Experimental group: Data scientists</li>
+<li>Control group: Random pedestrian walking down Carroll Creek.</li>
+</ul></li>
+<li>We’ll use defaults for the rest of the options. Can you find a random seed that results in something publishable? (For the purposes of this lab, we’ll say that anything with a p-value less than 0.05 is publishable.)</li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Random seed 1521
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>DV1 looks pretty good, except there is a pesky outlier at the bottom of the random pedestrian group. Let’s drop it, because it looks suspicious.</li>
+<li>We have acheived significance!</li>
+<li>Time to publish.</li>
+</ul>
+</div>
+</div>
+</div>
+<ol start="3" type="1">
+<li>Try some other options and see what interesting results you can come up with.
+<ul>
+<li>Increasing the number of variables (<code>Number of DV's</code>) will increase your chances of finding something “interesting”.</li>
+<li>A smaller sample size is usually more prone to false positive findings, but try adding a few participants at a time until you get something significant.</li>
+<li>Controlling for different variables (socioeconomic status, age, gender, …) might help. If it does, great! If not, you can skip that part.</li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Random seed 827346
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li>Number of DV’s 10</li>
+<li>Add 5 new participants.</li>
+<li>DV3 looks pretty good!</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+What <em>not</em> to do
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>These are great examples of how <em>not</em> to run a study. While these ideas look pretty egregious, it is surprisingly easy to p-hack. Keeping a watchful eye out for p-hacking will save you grief and wasted time!</p>
+</div>
+</div>
 </section>
-<section id="tentative-class-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="tentative-class-schedule">Tentative Class Schedule</h3>
+<section id="magic-coin" class="level2">
+<h2 class="anchored" data-anchor-id="magic-coin">Magic Coin</h2>
+<p>I have a magic coin. Every time I flip the coin, I get a heads! I’ll prove it to you.</p>
 <div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Coding Demo</th>
-<th style="text-align: left;">Lab</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">Aug 24</td>
-<td style="text-align: left;"><a href="https://swcarpentry.github.io/git-novice/">Git</a> (1 - 9)</td>
-<td style="text-align: left;"><a href="https://bifx552-23.github.io/CourseInfo/">Class intro</a>, <a href="labs/01markdown">Markdown / Quarto</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">Aug 31</td>
-<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/">R Intro</a> (1-3)</td>
-<td style="text-align: left;"></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">Sep 7</td>
-<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/06-data-subsetting/index.html">Subsetting Data</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/07-control-flow/index.html">R Control Flow</a></td>
-<td style="text-align: left;"><a href="labs/02phacking">P-Hacking</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">Sep 14</td>
-<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/08-plot-ggplot2/index.html">R Graphics</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/09-vectorization/index.html">R Vectorization</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/10-functions/index.html">R Functions</a></td>
-<td style="text-align: left;">COVID Data</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">Sep 21</td>
-<td style="text-align: left;"><a href="https://swcarpentry.github.io/r-novice-gapminder/">R Advanced Data</a> (11, 13-14)</td>
-<td style="text-align: left;">RNA-Seq Data</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">Sep 28</td>
-<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/bioc-intro/50-joining-tables/index.html">Joining Tables</a>, <a href="https://swcarpentry.github.io/r-novice-gapminder/16-wrap-up/index.html">R Software Tips</a></td>
-<td style="text-align: left;">DockerHub / Shiny</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">Oct 5</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Midterm Exam Due</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">Oct 12</td>
-<td style="text-align: left;"><a href="https://datacarpentry.org/shell-genomics/">Unix</a> (1 - 4)</td>
-<td style="text-align: left;">Unix lab</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">Oct 19</td>
-<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/">Snakemake</a> (1 - 4)</td>
-<td style="text-align: left;">Snakemake Intro</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">Oct 26</td>
-<td style="text-align: left;"><a href="https://datacarpentry.org/wrangling-genomics/">Variant Calling Workflow</a> (1 - 4)</td>
-<td style="text-align: left;">Variant Calling Pipeline</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">Nov 2</td>
-<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/">Advanced Snakemake</a></td>
-<td style="text-align: left;">Variant Calling Pipeline (cont)</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">Nov 9</td>
-<td style="text-align: left;"><a href="https://carpentries-incubator.github.io/bioc-project/index.html">Intro to Bioconductor</a>(1 - 4)</td>
-<td style="text-align: left;">Bioconductor Project</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Nov 16</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Bioconductor Project</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">Nov 23</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Thanksgiving (no class)</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Nov 30</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Project Presentations</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">16</td>
-<td style="text-align: left;">Dec 7</td>
-<td style="text-align: left;"></td>
-<td style="text-align: left;">Exam Due (no class)</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 = Heads, 0 = Tails</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
 </div>
 </div>
-</section>
-</section>
+<p>Don’t believe that it always gives me heads? Let’s try that again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 = Heads, 0 = Tails</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+</div>
+</div>
+<p>OK, if you check the code behind this page, you’ll see that I used a very special random seed. It will actually generate 29 heads in a row. The probability of that is approximately 1.9^{-9}, but it doesn’t take much work to find one of those special random seeds if you are patient.</p>
+<p>Your challenge: Find a random seed that results in at least 10 heads in a row.</p>
+<p>Advanced challenge: Create a magic coin shiny app that will allow you to identify a seed that will result in an arbitrary number of heads. I’ve given you starter code <a href="https://classroom.github.com/a/NpOj4BJz">here</a>.</p>
+<ul>
+<li><p>Clone your fork to your local machine.</p></li>
+<li><p>Complete the app.</p></li>
+<li><p>Push your completed app to GitHub.</p></li>
+</ul>
 </section>
 
 </main>
