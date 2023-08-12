@@ -45,22 +45,20 @@ On completion of this course, students should be comfortable with the following:
 -   Working with version controlled code repositories in a collaborative work environment
 -   Stitching a series of commands and/or programs together into a reusable pipeline
 
-### Coding Demos and In-Class Labs
+### Asynchronous and In-Person Content
 
-Recorded coding demos will be posted weekly, and in-class coding labs will be scheduled on Thursday evenings throughout the term at 5:30 PM (unless otherwise specified). Because Bioinformatics is such a fast-moving field, demos and labs will be based on up-to-date, publicly available material from experts in the [Data Carpentry](https://datacarpentry.org/), [Software Carpentry](https://software-carpentry.org/), and [Bioconductor](https://bioc2023.bioconductor.org/) communities.
+Asynchronous content will be posted weekly, and in-person labs will be scheduled on Thursday evenings throughout the term at 5:30 PM (see the schedule below). Course content will be based on up-to-date, publicly available material from experts in the [Data Carpentry](https://datacarpentry.org/), [Software Carpentry](https://software-carpentry.org/), and [Bioconductor](https://bioc2023.bioconductor.org/) communities.
 
 ### Homework and Course Project
 
-There will be homework assignments based on each of the weekly coding demos. This will give you an opportunity to practice what we cover each week. Homework should be completed before class each week.
-
-Students will develop a repository with examples of the material and techniques we will be covering throughout the course. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.
+There will be homework assignments associated with each course module. This will give you an opportunity to practice what we cover each week. Homework from asynchronous content will be due on Thursdays and should be completed before each in-person meeting. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.
 
 ### Grading
 
-Grades will be based on completion of homework, quizzes and two exams.
+Grades will be based on completion of homework, a group project and two exams.
 
--   Homework - 25%
--   Labs - 25%
+-   Asynchronous Content - 25%
+-   In-person Content - 25%
 -   Bioconductor Project - 10%
 -   Mid-term - 20%
 -   Final exam - 20%
@@ -69,7 +67,7 @@ Late submissions of any work will be subject to a 5% penalty for each day past t
 
 ### Weather
 
-In the event of severe weather resulting in the closure of Hood College and the cancellation of an in-person lab, the lab will be held virtually at the scheduled time and a recording posted on Blackboard for asynchronous viewing.
+In the event of severe weather resulting in the closure of Hood College and the cancellation of an in-person meeting, the meeting will be held virtually at the scheduled time and a recording posted on Blackboard for asynchronous viewing.
 
 ### Tentative Class Schedule
 
@@ -118,15 +116,15 @@ schedule <- bind_rows(schedule,
                Date = 'Sep 28', 
                `Coding Demo` = paste0('[Joining Tables](', bioc_intro, '50-joining-tables/index.html), ',
                                       '[R Software Tips](', gapminder, '16-wrap-up/index.html)'),
-               Lab           =        'DockerHub / Shiny'))
+               Lab           =        ''))
 
 #### Midterm ####
 
 schedule <- bind_rows(schedule,
         tibble(Week = 7,
                Date = 'Oct 5', 
-               `Coding Demo` = '',
-               Lab           = "Midterm Exam Due"))
+               `Coding Demo` = '*Midterm*',
+               Lab           = "*Exam Due (no class)*"))
 
 #### UNIX and Snakemake ####
 shell_genomics <- 'https://datacarpentry.org/shell-genomics/'
@@ -135,7 +133,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 8,
                Date = 'Oct 12', 
                `Coding Demo` = paste0('[Unix](',        shell_genomics, ') (1 - 4)'),
-               Lab           = 'Unix lab'))
+               Lab           = ''))
 # Lab ideas:
 #  * make login script
 #  * write script to process a bunch of files - batch convert images using imageMagick?
@@ -174,21 +172,23 @@ schedule <- bind_rows(schedule,
 schedule <- bind_rows(schedule,
         tibble(Week = 13:14,
                Date = paste('Nov', c(16, 23)), 
-               `Coding Demo` = '',
-               Lab           = c('Bioconductor Project', 'Thanksgiving (no class)')))
+               `Coding Demo` = c('*Group Work*', '*Thanksgiving*'),
+               Lab           = c('Bioconductor Project', '')))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 15,
                Date = 'Nov 30', 
-               `Coding Demo` = '',
+               `Coding Demo` = '*Group Work*',
                Lab           = 'Project Presentations'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 16,
                Date = 'Dec 7',
-               `Coding Demo` = '',
-               Lab           = 'Exam Due (no class)'))
+               `Coding Demo` = '*Final*',
+               Lab           = '*Exam Due (no class)*'))
 
-
-kable(schedule)
+rename(schedule,
+       `Asynchronous Content` = `Coding Demo`,
+       `In Person Content` = Lab) %>%
+    kable()
 ```
