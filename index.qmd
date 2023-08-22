@@ -16,7 +16,7 @@ library(magrittr)
 library(dplyr)
 ```
 
-# Welcome to BIFX 553 - Bioinformatics Data Skills
+# Welcome to BIFX 552 - Bioinformatics Data Skills
 
 ## Syllabus
 
