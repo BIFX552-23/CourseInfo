@@ -6,7 +6,7 @@ format:
       light: flatly
       dark: darkly
   docx:
-    date: Aug 24, 2023
+    date: Aug 30, 2023
 ---
 
 ## Agenda
@@ -38,4 +38,8 @@ We are going to start with the iris demo from [Rpubs.com](https://rpubs.com/moer
 
 4.  [Fold the code](https://quarto.org/docs/output-formats/html-code.html#folding-code) in the visualization section, such that only the figures are shown by default.
 
-5.  Export your document in [Word format](https://quarto.org/docs/output-formats/ms-word.html) and email it to me.
+5. Set up a repository using [this GitHub Classroom link](https://classroom.github.com/a/E8-5064m) and push your code and html output to GitHub.
+
+6. Set up GitHub pages on your repository.
+
+7.  Export your document in [Word format](https://quarto.org/docs/output-formats/ms-word.html) and submit it on Blackboard.
