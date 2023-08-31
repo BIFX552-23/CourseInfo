@@ -95,25 +95,25 @@ schedule <- bind_rows(schedule,
         tibble(Week = 3,
                Date = 'Sep 14', 
                `Coding Demo` = 'Subsetting Data, R Control Flow',
-               Lab           =        '[P-Hacking](labs/02phacking)'))
+               Lab           = '[P-Hacking](labs/02phacking)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 4,
                Date = 'Sep 21', 
                `Coding Demo` = 'R Graphics, R Vectorization, R Functions',
-               Lab           =        'COVID Data'))
+               Lab           = 'COVID Data'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 5,
                Date = 'Sep 28', 
                `Coding Demo` = 'R Advanced Data',
-               Lab           =        'RNA-Seq Data'))
+               Lab           = 'RNA-Seq Data'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 6,
                Date = 'Oct 5', 
                `Coding Demo` = 'Joining Tables, R Software Tips',
-               Lab           =        ''))
+               Lab           = ''))
 
 #### Midterm ####
 
@@ -130,7 +130,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 8,
                Date = 'Oct 19', 
                `Coding Demo` = 'Unix',
-               Lab           = ''))
+               Lab           = 'Unix lab?'))
 # Lab ideas:
 #  * make login script
 #  * write script to process a bunch of files - batch convert images using imageMagick?
@@ -139,7 +139,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 9,
                Date = 'Oct 26', 
                `Coding Demo` = 'Snakemake',
-               Lab           = 'Snakemake Intro'))
+               Lab           = ''))
 
 #### Variant Calling and Snakemake ####
 
