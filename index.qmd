@@ -113,7 +113,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 6,
                Date = 'Oct 5', 
                `Coding Demo` = 'Joining Tables, R Software Tips',
-               Lab           = ''))
+               Lab           = '*Exam review (virtual)*'))
 
 #### Midterm ####
 
@@ -139,7 +139,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 9,
                Date = 'Oct 26', 
                `Coding Demo` = 'Snakemake',
-               Lab           = ''))
+               Lab           = '*Linux practice (virtual)*'))
 
 #### Variant Calling and Snakemake ####
 
@@ -170,7 +170,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 13,
                Date = 'Nov 23', 
                `Coding Demo` = '*Group Work*',
-               Lab           = '*Thanksgiving*'))
+               Lab           = '*Thanksgiving (no class)*'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 14,
