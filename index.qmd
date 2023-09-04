@@ -89,7 +89,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 2,
                Date = 'Sep 7', 
                `Coding Demo` = 'R Intro',
-               Lab           = ''))
+               Lab           = '*[git practice](https://learngitbranching.js.org) (virtual)*'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 3,
