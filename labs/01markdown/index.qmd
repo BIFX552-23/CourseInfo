@@ -31,6 +31,13 @@ format:
 
 We are going to start with the iris demo from [Rpubs.com](https://rpubs.com/moeransm/intro-iris), and then we'll go back and make some upgrades to the formatting.
 
+::: {.callout-important}
+## Update
+Due to time constraints and permissions issues, several of these tasks are now optional.
+:::
+
+### Required
+
 1.  Start by replicating the information and formatting found at <https://rpubs.com/moeransm/intro-iris> (export HTML code). Be sure to leave a note attirbuting the original authors.
 2. Set up a repository using [this GitHub Classroom link](https://classroom.github.com/a/E8-5064m) and push your code and html output to GitHub.
 3. Set up GitHub pages on your repository.
