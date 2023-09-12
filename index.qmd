@@ -101,13 +101,13 @@ schedule <- bind_rows(schedule,
         tibble(Week = 4,
                Date = 'Sep 21', 
                `Coding Demo` = 'R Graphics, R Vectorization, R Functions',
-               Lab           = 'COVID Data'))
+               Lab           = '[RNA-Seq Data](labs/03RNA-seq-data)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 5,
                Date = 'Sep 28', 
                `Coding Demo` = 'R Advanced Data',
-               Lab           = 'RNA-Seq Data'))
+               Lab           = '[COVID Data](labs/04COVID)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 6,
