@@ -87,7 +87,8 @@ I have a magic coin. Every time I flip the coin, I get a heads! I'll prove it to
 
 ```{r}
 #| echo: false
-set.seed(1870225129)
+# seed that gives 29 heads: 1870225129
+set.seed(236903047)
 ```
 
 ```{r}
@@ -102,7 +103,14 @@ Don't believe that it always gives me heads? Let's try that again:
 rbinom(10, 1, 0.5)
 ```
 
-OK, if you check the code behind this page, you'll see that I used a very special random seed. It will actually generate 29 heads in a row. The probability of that is approximately `r signif(0.5^29, 2)`, but it doesn't take much work to find one of those special random seeds if you are patient.
+And again:
+
+```{r}
+# 1 = Heads, 0 = Tails
+rbinom(10, 1, 0.5)
+```
+
+OK, if you check the code behind this page, you'll see that I used a specific random seed. It will actually generate 30 "heads" in a row. The probability of that is approximately `r signif(0.5^30, 2)`, but it doesn't take much work to find one of those special random seeds if you are patient.
 
 Your challenge: Find a random seed that results in at least 10 heads in a row.
 

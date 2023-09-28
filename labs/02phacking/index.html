@@ -224,7 +224,15 @@ What <em>not</em> to do
 <pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
 </div>
 </div>
-<p>OK, if you check the code behind this page, you’ll see that I used a very special random seed. It will actually generate 29 heads in a row. The probability of that is approximately 1.9^{-9}, but it doesn’t take much work to find one of those special random seeds if you are patient.</p>
+<p>And again:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1 = Heads, 0 = Tails</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">rbinom</span>(<span class="dv">10</span>, <span class="dv">1</span>, <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 1 1 1 1 1 1 1 1 1 1</code></pre>
+</div>
+</div>
+<p>OK, if you check the code behind this page, you’ll see that I used a specific random seed. It will actually generate 30 “heads” in a row. The probability of that is approximately 9.3^{-10}, but it doesn’t take much work to find one of those special random seeds if you are patient.</p>
 <p>Your challenge: Find a random seed that results in at least 10 heads in a row.</p>
 <p>Advanced challenge: Create a magic coin shiny app that will allow you to identify a seed that will result in an arbitrary number of heads. I’ve given you starter code <a href="https://classroom.github.com/a/NpOj4BJz">here</a>.</p>
 <ul>
