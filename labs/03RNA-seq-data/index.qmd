@@ -113,7 +113,8 @@ We could also add color, but it begins to get a little messy with the large numb
 ggplot(dat_fc, aes(time_4_vs_0, time_8_vs_0, color = gene_biotype)) +
     geom_point(alpha = 0.3) +
     scale_color_manual(values = c(cbpalette, '#333333')) +
-    geom_abline(intercept = 0, slope = 1)
+    geom_abline(intercept = 0, slope = 1) +
+    guides(color = guide_legend(override.aes = list(alpha = 1)))
 ```
 
 Over-plotting can be an issue with large datasets like this. One solution is using `hexbin:geom_hex()`.
@@ -154,7 +155,8 @@ ggplot(dat, aes(sample, l2exp)) +
     scale_color_manual(values = cbbPalette[1:3],
                        name = 'Time') +
     theme(axis.text.x = element_text(angle = 90,  hjust = 0.5, vjust = 0.5)) +
-    ylab("Log2 Expression")
+    ylab("Log2 Expression") +
+    guides(color = guide_legend(override.aes = list(alpha = 1)))
 ```
 
 ### Line plots
