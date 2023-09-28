@@ -12,3 +12,5 @@ Virtual working sessions are intended to be virtual, but they could just as easi
     * Need to decouple the tools from the repository (data in the repo are where the rubber meets the road - SourceTree, GitHub, terminal, and RStudio are just how we interact with the data).
     * Conflicts?
     
+* Week 6: Exam review
+  * Antibiotics under our feet
