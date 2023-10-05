@@ -113,7 +113,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 6,
                Date = 'Oct 5', 
                `Coding Demo` = 'Joining Tables, R Software Tips',
-               Lab           = '*Exam review (virtual)*'))
+               Lab           = '*[Antibiotics Under Our Feet](labs/05Antibiotics-under-our-feet) (virtual)*'))
 
 #### Midterm ####
 

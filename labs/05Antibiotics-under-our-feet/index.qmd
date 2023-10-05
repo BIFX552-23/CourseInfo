@@ -1,0 +1,117 @@
+---
+title: "Antibiotics Under Our Feet"
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+---
+
+## Midterm format
+
+* Students will be provided with a GitHub Classroom link to fork some starter code and Word document demonstrating what the solution should look like.
+* The objective is to replicate the graphical analysis given in the provided Word document.
+* Students will be graded on the following aspects of their work:
+  * R Code - 40% (renders without errors, completion of all sections, general neatness and documentations, correct files are pushed to GitHub, use of vectorization)
+  * Figures - 30% (proper variable transformation, use of color, general neatness and readability)
+  * Word document - 15% (submission of Word document, code is not shown, yaml header is correct)
+  * Understanding - 15% (choice of transformation, written figure analysis, and conclusions)
+* When code is pushed to GitHub a pull request will automatically be opened. Do *not* close the pull requesst. I will give you feedback through the pull request.
+
+## Antibiotics Under Our Feet
+
+The dataset we will be using comes from a study called Antibiotics Under Our Feet[^1]. It has been [shared on figshare](https://figshare.com/articles/dataset/Antibiotics_under_our_feet_investigating_antimicrobial_resistance_Scotland_/23770230).
+
+[^1]: Gul, Anum; Mackenzie, Dylan; Shahid, Aleena; Tawfeeq, Tawfeeq; Cornwell, Rebecca; Czekster, Clarissa Melo (2023). Antibiotics under our feet: investigating antimicrobial resistance (Scotland). figshare. Dataset. <https://doi.org/10.6084/m9.figshare.23770230.v1>
+
+```{r setup}
+#| echo: false
+#| include: false
+library(dplyr)
+library(readxl)
+library(stringr)
+library(purrr)
+
+library(ggplot2)
+library(cowplot)
+theme_set(theme_cowplot())
+
+library(knitr)
+
+
+# read in taxonomy for each microbe
+tax <- read_excel('AUOF investigating antimicrobial resistance student spreadsheet.xlsx',
+                  sheet = 'Taxonomy') %>%
+  
+  # split out taxonomy levels
+  mutate(Lineage = map(Lineage, ~ str_split(.x, '; ')[[1]]),
+         Domain  = map_chr(Lineage, ~ .x[1]),
+         Kingdom = map_chr(Lineage, ~ .x[2]),
+         Phylum  = map_chr(Lineage, ~ .x[3]),
+         Class   = map_chr(Lineage, ~ .x[4]),
+         Order   = map_chr(Lineage, ~ .x[5]),
+         Family  = map_chr(Lineage, ~ .x[6]),
+         Genus   = map_chr(Lineage, ~ .x[7]))
+
+
+# read in study data
+dat <- read_excel('AUOF investigating antimicrobial resistance student spreadsheet.xlsx',
+                  sheet = 2) %>%
+  
+  # rename columns
+  rename(Kingdom = `Classification - bacteria, fungi?`,
+         Disease_long = `What disease does it cause?`,
+         Resistance = `Antimicrobial that it was resistant to?`,
+         Action_long = `Method of action of antimicrobial drug?`,
+         Observed_long = `Microbe species present our soil samples?`) %>%
+  
+         # fix misspelling of Citrobacter freundii
+  mutate(Microbe = ifelse(Microbe == 'Citrobacter fruendii', 'Citrobacter freundii', Microbe),
+         
+         # categorize antimicrobial action
+         Action = case_when(grepl(              'peptidoglycan', Action_long) ~ 'Peptidoglycan inhibition',
+                            grepl('penicillin-binding proteins', Action_long) ~ 'PBP',
+                            grepl( 'penecilin-binding proteins', Action_long) ~ 'PBP',
+                            grepl(      'egrosterol|ergosterol', Action_long) ~ 'Ergosterol inhibition',
+                            grepl(       'interacting with DNA', Action_long) ~ 'DNA interactions',
+                            grepl(              'glucan|gulcan', Action_long) ~ 'Glucan inhibition',
+                            grepl(                  'cell wall', Action_long) ~ 'Cell wall disruption',
+                            grepl(           'mucopeptide wall', Action_long) ~ 'Cell wall disruption',
+                            grepl(              'cell membrane', Action_long) ~ 'Cell wall disruption',
+                            grepl(         'ribosome|ribosomal', Action_long) ~ 'Translation disruption',
+                            TRUE                                              ~ 'Other'),
+         
+         # observed into a logical variable
+         Observed = grepl('Yes', Observed_long)) %>%
+         
+  
+  # remove "EXAMPLE" row
+  filter(!grepl("EXAMPLE", Microbe)) %>%
+  
+  # merge taxonomy data into the dat
+  select(-Kingdom) %>% # drop this, as it 
+  left_join(tax)
+```
+
+```{r}
+#| echo: false
+group_by(dat, Action) %>%
+  summarize(`Number of Microbes` = n(),
+            Observed = sum(Observed)) %>%
+  ungroup() %>%
+  kable(caption = "Number of microbes with documented antimicrobial resistance that were targetd by this study, grouped by antimicrobial action, and the number of microbes found in study samples.")
+```
+
+```{r}
+#| echo: false
+ggplot(dat, aes(Phylum)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+```{r}
+#| echo: false
+ggplot(dat, aes(Class)) +
+  geom_bar() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
