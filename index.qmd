@@ -101,13 +101,13 @@ schedule <- bind_rows(schedule,
         tibble(Week = 4,
                Date = 'Sep 21', 
                `Coding Demo` = 'R Graphics, R Vectorization, R Functions',
-               Lab           = '[RNA-Seq Data](labs/03RNA-seq-data)'))
+               Lab           = '[RNA-Seq Data Viz](labs/03RNA-seq-data)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 5,
                Date = 'Sep 28', 
                `Coding Demo` = 'R Advanced Data',
-               Lab           = '[COVID Data](labs/04COVID)'))
+               Lab           = '[Canine Confounders](labs/04COVID)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 6,
@@ -130,10 +130,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 8,
                Date = 'Oct 19', 
                `Coding Demo` = 'Unix',
-               Lab           = 'Unix lab?'))
-# Lab ideas:
-#  * make login script
-#  * write script to process a bunch of files - batch convert images using imageMagick?
+               Lab           = '[Command Line Practice](labs/06Command-line-practice)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 9,
