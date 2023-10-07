@@ -76,111 +76,118 @@ In the event of severe weather resulting in the closure of Hood College and the 
 #### Git and GitHub ####
 schedule <- 
     tibble(Week = 1,
-           Date = 'Aug 31', 
+           Date = '', 
            `Coding Demo` =       'Git',
-           Lab           = paste('[Class intro](https://bifx552-23.github.io/CourseInfo/),',
+           Lab           = paste('Basic git lesson (TBD)'))
+
+schedule <- bind_rows(schedule,
+        tibble(Week = 2,
+               Date = '', 
+               `Coding Demo` = 'Git (cont)',
+               Lab           = '[Class intro](https://bifx552-23.github.io/CourseInfo/),',
                                  '[Markdown / Quarto](labs/01markdown)'))
+
 
 #### R for Reproducible Research ####
 gapminder <- 'https://swcarpentry.github.io/r-novice-gapminder/'
 bioc_intro <- 'https://carpentries-incubator.github.io/bioc-intro/'
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 2,
-               Date = 'Sep 7', 
+        tibble(Week = 3,
+               Date = '', 
                `Coding Demo` = 'R Intro',
                Lab           = '*[git practice](https://learngitbranching.js.org) (virtual)*'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 3,
-               Date = 'Sep 14', 
+        tibble(Week = 4,
+               Date = '', 
                `Coding Demo` = 'Subsetting Data, R Control Flow',
                Lab           = '[P-Hacking](labs/02phacking)'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 4,
-               Date = 'Sep 21', 
+        tibble(Week = 5,
+               Date = '', 
                `Coding Demo` = 'R Graphics, R Vectorization, R Functions',
                Lab           = '[RNA-Seq Data](labs/03RNA-seq-data)'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 5,
-               Date = 'Sep 28', 
+        tibble(Week = 6,
+               Date = '', 
                `Coding Demo` = 'R Advanced Data',
                Lab           = '[COVID Data](labs/04COVID)'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 6,
-               Date = 'Oct 5', 
+        tibble(Week = 7,
+               Date = '', 
                `Coding Demo` = 'Joining Tables, R Software Tips',
                Lab           = '*Exam review (virtual)*'))
 
 #### Midterm ####
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 7,
-               Date = 'Oct 12', 
+        tibble(Week = 8,
+               Date = '', 
                `Coding Demo` = '*Midterm*',
                Lab           = "*Exam Due (no class)*"))
+
 
 #### UNIX and Snakemake ####
 shell_genomics <- 'https://datacarpentry.org/shell-genomics/'
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 8,
-               Date = 'Oct 19', 
+        tibble(Week = 9,
+               Date = '', 
                `Coding Demo` = 'Unix',
-               Lab           = 'Unix lab?'))
-# Lab ideas:
-#  * make login script
-#  * write script to process a bunch of files - batch convert images using imageMagick?
+               Lab           = 'Command Line Practice'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 9,
-               Date = 'Oct 26', 
+        tibble(Week = 10,
+               Date = '', 
                `Coding Demo` = 'Snakemake',
-               Lab           = '*Linux practice (virtual)*'))
+               Lab           = 'Basic Snakemake Practice'))
+
 
 #### Variant Calling and Snakemake ####
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 10,
-               Date = 'Nov 2', 
+        tibble(Week = 11,
+               Date = '', 
                `Coding Demo` = 'Variant Calling Workflow',
                Lab           = 'Variant Calling Pipeline'))
 # do this over two weeks with https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/05-expansion/index.html in-between, perhaps cover some of https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/06-awkward_programs/index.html between parts 1 and 2 as well.
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 11,
-               Date = 'Nov 9', 
+        tibble(Week = 12,
+               Date = '', 
                `Coding Demo` = 'Advanced Snakemake', # (5, 7 - 9) cover 6 in lab?
                Lab           = 'Variant Calling Pipeline (cont)'))
+
 
 #### Bioconductor ####
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 12,
-               Date = 'Nov 16', 
+        tibble(Week = 13,
+               Date = '', 
                `Coding Demo` = 'Intro to Bioconductor',
                Lab           = 'Bioconductor Project'))
 # review Bioconductor project site
 # review Biostrings vignette(s) https://www.bioconductor.org/packages/release/bioc/html/Biostrings.html
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 13,
+        tibble(Week = 14,
                Date = 'Nov 23', 
                `Coding Demo` = '*Group Work*',
                Lab           = '*Thanksgiving (no class)*'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 14,
-               Date = 'Nov 30', 
+        tibble(Week = 15,
+               Date = '', 
                `Coding Demo` = '*Group Work*',
                Lab           = 'Project Presentations'))
 
 schedule <- bind_rows(schedule,
-        tibble(Week = 15,
-               Date = 'Dec 7',
+        tibble(Week = 16,
+               Date = '',
                `Coding Demo` = '*Final*',
                Lab           = '*Exam Due (no class)*'))
 
