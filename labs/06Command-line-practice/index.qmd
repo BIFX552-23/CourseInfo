@@ -1,0 +1,43 @@
+---
+title: "Command Line Practice"
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+---
+
+## Agenda
+
+-   Today's lab
+    -   Practice command line skills needed develop code on multiple computers / locations, including:
+
+        -   Your laptop
+
+        -   The Hood cluster
+
+        -   GitHub.com
+
+1.  [Log into the Hood cluster](https://bifx552-23.github.io/CourseInfo/cluster.html) and change your password using the `pwd` command.
+
+2.  Create a repository on GitHub with and initialize with a README. Save this repository under the BIFX552-23 organization.
+
+3.  Clone your new repository to the Hood cluster and to your laptop.
+
+4.  On your laptop, write an R script that creates a figure.
+
+    -   Simulate a data set using the following code: `dat <- tibble(x = rnorm(100), y = x + rnorm(100, sd = 0.2))`
+
+    -   Plot `x` vs `y` with a trend line.
+
+5.  Push your changes to GitHub and pull them down onto the cluster.
+
+6.  On the cluster, save the generated image to a `png` file and run the code.
+
+7.  Push your code and figure to GitHub.
+
+8.  Pull the updates down to your laptop and add a few comments about the repository to the README.
+
+9.  Push the updated readme to GitHub and pull it down to the cluster.
+
+10. Submit a link to your repository on Blackboard.
