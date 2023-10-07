@@ -136,7 +136,7 @@ schedule <- bind_rows(schedule,
         tibble(Week = 9,
                Date = 'Oct 26', 
                `Coding Demo` = 'Snakemake',
-               Lab           = '*Linux practice (virtual)*'))
+               Lab           = 'Linux practice'))
 
 #### Variant Calling and Snakemake ####
 
