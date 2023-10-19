@@ -135,8 +135,8 @@ schedule <- bind_rows(schedule,
 schedule <- bind_rows(schedule,
         tibble(Week = 9,
                Date = 'Oct 26', 
-               `Coding Demo` = 'Snakemake',
-               Lab           = 'Linux practice'))
+               `Coding Demo` = 'Snakemake', # modules 1 - 4
+               Lab           = 'Docker practice'))
 
 #### Variant Calling and Snakemake ####
 
@@ -150,7 +150,7 @@ schedule <- bind_rows(schedule,
 schedule <- bind_rows(schedule,
         tibble(Week = 11,
                Date = 'Nov 9', 
-               `Coding Demo` = 'Advanced Snakemake', # (5, 7 - 9) cover 6 in lab?
+               `Coding Demo` = 'Advanced Snakemake', # modules (5, 7 - 9)
                Lab           = 'Variant Calling Pipeline (cont)'))
 
 #### Bioconductor ####
