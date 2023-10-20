@@ -18,7 +18,7 @@ format:
 
         -   GitHub.com
 
-1.  [Log into the Hood cluster](https://bifx552-23.github.io/CourseInfo/cluster.html) and change your password using the `pwd` command.
+1.  [Log into the Hood cluster](https://bifx552-23.github.io/CourseInfo/cluster.html) and change your password using the `passwd` command.
 
 2.  Create a repository on GitHub with and initialize with a README. Save this repository under the BIFX552-23 organization.
 
