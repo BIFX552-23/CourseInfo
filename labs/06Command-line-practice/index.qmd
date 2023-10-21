@@ -7,6 +7,8 @@ format:
       dark: darkly
 ---
 
+<!-- Prepare a Docker container as backup for this lesson. Use r-base, then add git and nano -->
+
 ## Agenda
 
 -   Today's lab
