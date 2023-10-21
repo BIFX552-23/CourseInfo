@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>CourseInfo</title>
+<title>Logging into the cluster at Hood</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,31 +23,32 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
-<script src="index_files/libs/quarto-html/quarto.js"></script>
-<script src="index_files/libs/quarto-html/popper.min.js"></script>
-<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
-<script src="index_files/libs/quarto-html/anchor.min.js"></script>
-<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
-<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="index_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="cluster_files/libs/clipboard/clipboard.min.js"></script>
+<script src="cluster_files/libs/quarto-html/quarto.js"></script>
+<script src="cluster_files/libs/quarto-html/popper.min.js"></script>
+<script src="cluster_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="cluster_files/libs/quarto-html/anchor.min.js"></script>
+<link href="cluster_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="cluster_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="cluster_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="cluster_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="cluster_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="cluster_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="cluster_files/libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 
 
 </head>
 
-<body class="fullcontent">
+<body>
 
 <div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
-
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="cluster.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></div>
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">CourseInfo</h1>
+<h1 class="title">Logging into the cluster at Hood</h1>
 </div>
 
 
@@ -62,174 +63,57 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="welcome-to-bifx-552---bioinformatics-data-skills" class="level1">
-<h1>Welcome to BIFX 552 - Bioinformatics Data Skills</h1>
-<section id="syllabus" class="level2">
-<h2 class="anchored" data-anchor-id="syllabus">Syllabus</h2>
-<section id="course-description" class="level3">
-<h3 class="anchored" data-anchor-id="course-description">Course Description</h3>
-<p>This class provides an introduction to applied data science skills needed by bioinformatics professionals. A focus will be placed on reproducible bioinformatics research and will include the following topics and tools: beginning to intermediate use of the Unix command line, working with remote computing resources, version tracking, R and Bioconductor, tools for manipulating sequence data, and creation of pipelines.</p>
+<p>We will be using the cluster a lot this term, so the sooner you are able to log in the better. If you run into problems, check out the troubleshooting section below or <a href="mailto:johnson@hood.edu">drop me an email</a>.</p>
+<section id="on-a-mac-linux-or-wsl2" class="level4">
+<h4 class="anchored" data-anchor-id="on-a-mac-linux-or-wsl2">On a Mac, Linux, or WSL2</h4>
 <ul>
-<li>Instructor: Randall Johnson, PhD</li>
-<li>Office hours: Office hours will be held immediately before and after in-person meetings. Drop me a note to schedule a virtual office hour at another time.</li>
-<li>Prerequisites: BIFX 503</li>
-<li>Textbooks: We will not be using a textbook this term, but you may find the following helpful. All are freely available online.
+<li>Open a new terminal window</li>
+<li>Type <code>ssh &lt;your_user_name&gt;@144.175.88.21</code>
 <ul>
-<li><a href="https://r4ds.had.co.nz/">R for Data Science</a></li>
-<li><a href="https://adv-r.hadley.nz/">Advanced R</a></li>
-<li><a href="https://r-pkgs.org/">R Packages</a></li>
+<li>where <code>&lt;your_user_name&gt;</code> is your Hood username. For example, if my user name were ‘slm6n’ I would type</li>
 </ul></li>
-<li>Communications: Course communications will be posted on <a href="https://hood.blackboard.com">Blackboard</a>.</li>
-<li>Code of Conduct: We want to foster a safe, enjoyable and productive learning environment. People like you add value to our program. To meet this end, all participants will be expected to follow the <a href="code_of_conduct.html">course code of conduct</a> located in the course documents on Blackboard.</li>
-<li><a href="https://www.hood.edu/hood-community/hood-college-health-wellness/gradcare">GradCare</a>: Graduate school can be stressful. Hood College is here to help. We offer a wide range of support services for graduate students. Our programs and resources address the eight dimensions of wellness—emotional, physical, social, intellectual, spiritual, occupational, financial and environmental—so you can stay healthy while maintaining school-work-life balance.</li>
-<li>Accessibility: As the instructor of this course, I endeavor to provide an inclusive learning environment. However, if you experience barriers to learning in this course, do not hesitate to discuss them with me and the Office for Accessibility Services, 301-696-3421, gmuer@hood.edu.</li>
 </ul>
-</section>
-<section id="learning-objectives" class="level3">
-<h3 class="anchored" data-anchor-id="learning-objectives">Learning Objectives</h3>
-<p>On completion of this course, students should be comfortable with the following:</p>
+<p><code>ssh slm6n@144.175.88.21</code></p>
 <ul>
-<li>Use of R and Bioconductor to perform bioinformatic analysis tasks</li>
-<li>Use of the Unix command line to manipulate data and perform bioinformatic analysis tasks</li>
-<li>Logging into and using remote computing resources</li>
-<li>Working with version controlled code repositories in a collaborative work environment</li>
-<li>Stitching a series of commands and/or programs together into a reusable pipeline</li>
+<li>Enter your password (not the same as your regular Hood account).</li>
 </ul>
 </section>
-<section id="asynchronous-and-in-person-content" class="level3">
-<h3 class="anchored" data-anchor-id="asynchronous-and-in-person-content">Asynchronous and In-Person Content</h3>
-<p>Asynchronous content will be posted weekly, and in-person labs will be scheduled on Thursday evenings throughout the term at 5:30 PM (see the schedule below). Course content will be based on up-to-date, publicly available material from experts in the <a href="https://datacarpentry.org/">Data Carpentry</a>, <a href="https://software-carpentry.org/">Software Carpentry</a>, and <a href="https://bioc2023.bioconductor.org/">Bioconductor</a> communities.</p>
-</section>
-<section id="homework-and-course-project" class="level3">
-<h3 class="anchored" data-anchor-id="homework-and-course-project">Homework and Course Project</h3>
-<p>There will be homework assignments associated with each course module. This will give you an opportunity to practice what we cover each week. Homework from asynchronous content will be due on Thursdays and should be completed before each in-person meeting. The last few weeks of the course will be devoted to a group project based on a bioinformatics workflow from Bioconductor.</p>
-</section>
-<section id="grading" class="level3">
-<h3 class="anchored" data-anchor-id="grading">Grading</h3>
-<p>Grades will be based on completion of homework, a group project and two exams.</p>
+<section id="on-windows-without-wsl-or-chromebook" class="level4">
+<h4 class="anchored" data-anchor-id="on-windows-without-wsl-or-chromebook">On Windows (without WSL) or Chromebook</h4>
+<p>There are several ways you can do this, but the easiest way I know of is using the Secure Shell extension on Chrome.</p>
 <ul>
-<li>Asynchronous Content - 25%</li>
-<li>In-person Content - 25%</li>
-<li>Bioconductor Project - 10%</li>
-<li>Mid-term - 20%</li>
-<li>Final exam - 20%</li>
+<li>Install the Secure Shell extension on your Chrome browser.</li>
+<li>Once enabled, click on the secure shell icon in the tool bar and select <code>Connection Dialog</code></li>
+<li>Enter your Hood username in the user name field.</li>
+<li>Enter ‘144.175.88.21’ in the host name field.</li>
+<li>Once you have created the connection (you may need to click in the freeform field), hit the connect button on the bottom right.</li>
+<li>Enter your password (not the same as your regular Hood account).</li>
 </ul>
-<p>Late submissions of any work will be subject to a 5% penalty for each day past the due date. The maximum penalty for late work will be 50%.</p>
 </section>
-<section id="weather" class="level3">
-<h3 class="anchored" data-anchor-id="weather">Weather</h3>
-<p>In the event of severe weather resulting in the closure of Hood College and the cancellation of an in-person meeting, the meeting will be held virtually at the scheduled time and a recording posted on Blackboard for asynchronous viewing.</p>
+<section id="mobile-connections" class="level4">
+<h4 class="anchored" data-anchor-id="mobile-connections">Mobile Connections</h4>
+<p>There are also mobile apps you can use to connect to the cluster. Given the amount of typing required, I wouldn’t recommend this unless you have a keyboard, but even without a keyboard it can work in a pinch. If you do want to connect from a mobile device, I have found that the Termius app works well and is available on both Google and Apple app stores (as an added bonus, you can get the pro version of Termius through the GitHub education developers pack). You will need the following to set up the connection for the first time. After that, you can save the connection and tap to log in.</p>
+<ul>
+<li>Host name: 144.175.88.21</li>
+<li>Hood user name</li>
+<li>Password (not the same as your regular Hood account)</li>
+</ul>
 </section>
-<section id="tentative-class-schedule" class="level3">
-<h3 class="anchored" data-anchor-id="tentative-class-schedule">Tentative Class Schedule</h3>
-<div class="cell">
-<div class="cell-output-display">
-<table class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: right;">Week</th>
-<th style="text-align: left;">Date</th>
-<th style="text-align: left;">Asynchronous Content</th>
-<th style="text-align: left;">In Person Content</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: right;">1</td>
-<td style="text-align: left;">Aug 31</td>
-<td style="text-align: left;">Git</td>
-<td style="text-align: left;"><a href="https://bifx552-23.github.io/CourseInfo/">Class intro</a>, <a href="labs/01markdown">Markdown / Quarto</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">2</td>
-<td style="text-align: left;">Sep 7</td>
-<td style="text-align: left;">R Intro</td>
-<td style="text-align: left;"><em><a href="https://learngitbranching.js.org">git practice</a> (virtual)</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">3</td>
-<td style="text-align: left;">Sep 14</td>
-<td style="text-align: left;">Subsetting Data, R Control Flow</td>
-<td style="text-align: left;"><a href="labs/02phacking">P-Hacking</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">4</td>
-<td style="text-align: left;">Sep 21</td>
-<td style="text-align: left;">R Graphics, R Vectorization, R Functions</td>
-<td style="text-align: left;"><a href="labs/03RNA-seq-data">RNA-Seq Data Viz</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">5</td>
-<td style="text-align: left;">Sep 28</td>
-<td style="text-align: left;">R Advanced Data</td>
-<td style="text-align: left;"><a href="labs/04COVID">Canine Confounders</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">6</td>
-<td style="text-align: left;">Oct 5</td>
-<td style="text-align: left;">Joining Tables, R Software Tips</td>
-<td style="text-align: left;"><em><a href="labs/05Antibiotics-under-our-feet">Antibiotics Under Our Feet</a> (virtual)</em></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">7</td>
-<td style="text-align: left;">Oct 12</td>
-<td style="text-align: left;"><em>Midterm</em></td>
-<td style="text-align: left;"><em>Exam Due (no class)</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">8</td>
-<td style="text-align: left;">Oct 19</td>
-<td style="text-align: left;">Unix</td>
-<td style="text-align: left;"><a href="labs/06Command-line-practice">Command Line Practice</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">Oct 26</td>
-<td style="text-align: left;">Snakemake</td>
-<td style="text-align: left;">Docker practice</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">10</td>
-<td style="text-align: left;">Nov 2</td>
-<td style="text-align: left;">Variant Calling Workflow</td>
-<td style="text-align: left;">Variant Calling Pipeline</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">11</td>
-<td style="text-align: left;">Nov 9</td>
-<td style="text-align: left;">Advanced Snakemake</td>
-<td style="text-align: left;">Variant Calling Pipeline (cont)</td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">12</td>
-<td style="text-align: left;">Nov 16</td>
-<td style="text-align: left;">Intro to Bioconductor</td>
-<td style="text-align: left;">Bioconductor Project</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">13</td>
-<td style="text-align: left;">Nov 23</td>
-<td style="text-align: left;"><em>Group Work</em></td>
-<td style="text-align: left;"><em>Thanksgiving (no class)</em></td>
-</tr>
-<tr class="even">
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">Nov 30</td>
-<td style="text-align: left;"><em>Group Work</em></td>
-<td style="text-align: left;">Project Presentations</td>
-</tr>
-<tr class="odd">
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Dec 7</td>
-<td style="text-align: left;"><em>Final</em></td>
-<td style="text-align: left;"><em>Exam Due (no class)</em></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</section>
-</section>
+<section id="troubleshooting" class="level4">
+<h4 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h4>
+<p>Here are some common problems that students have run into.</p>
+<ul>
+<li>Password doesn’t work
+<ul>
+<li><a href="mailto:johnson@hood.edu">Send me an email</a>, and we’ll reset your password.</li>
+</ul></li>
+<li>You get a warning that starts out “WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!”
+<ul>
+<li>This happens when the server has had a major upgrade since the last time you logged in. This is a safety feature that prevents you from logging into a server that is pretending to be the server you normally log into. If you have been logging in frequently and you get this warning unexpectedly, you should probably check with me or the system administrator before logging in.</li>
+<li>If you are using a terminal window (Mac or Linux), open the file called <code>~/.ssh/known_hosts</code> and remove the line that starts with <code>144.175.88.21</code>.</li>
+<li>If you are using the Chrome app or a mobile app, delete the saved connection and set it up again.</li>
+</ul></li>
+</ul>
 </section>
 
 </main>

@@ -1,6 +1,12 @@
 ---
 title: "Logging into the cluster at Hood"
-format: docx
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+  docx:
+    date: Aug 31, 2023
 editor: visual
 ---
 
@@ -45,4 +51,3 @@ Here are some common problems that students have run into.
     -   This happens when the server has had a major upgrade since the last time you logged in. This is a safety feature that prevents you from logging into a server that is pretending to be the server you normally log into. If you have been logging in frequently and you get this warning unexpectedly, you should probably check with me or the system administrator before logging in.
     -   If you are using a terminal window (Mac or Linux), open the file called `~/.ssh/known_hosts` and remove the line that starts with `144.175.88.21`.
     -   If you are using the Chrome app or a mobile app, delete the saved connection and set it up again.
-
