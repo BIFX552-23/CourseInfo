@@ -58,7 +58,7 @@ There will be homework assignments associated with each course module. This will
 
 Grades will be based on completion of homework, a group project and two exams.
 
--   Asynchronous Content - 25%
+-   Asynchronous Content - 25% <!-- Look into using Chalk and Wire -->
 -   In-person Content - 25%
 -   Bioconductor Project - 10%
 -   Mid-term - 20%
