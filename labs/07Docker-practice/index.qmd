@@ -1,0 +1,66 @@
+---
+title: "Docker Practice"
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+---
+
+## Agenda
+
+-   Today's lab
+    -   Compose a Docker container that could be used for the variant calling modules you will be working with this week.
+
+## Docker composition
+
+1. Create a git repository for your Docker container and clone it to your laptop. Create the following in your cloned repository:
+  * An RStudio project
+  * `.gitignore`
+  * `Dockerfile`
+
+2. Start up a Docker container with Ubuntu:
+
+```
+docker run -it ubuntu bash
+```
+
+3. Open your Dockerfile and start with the following header:
+
+```
+# Dockerfile for variant-calling
+
+# start with Ubuntu
+FROM ubuntu
+
+# install dependencies
+RUN apt-get update && apt-get install -y \
+```
+
+4. Verify that the following commands will run inside of your running Ubuntu container. Copy all commands you run to your Dockerfile to document what you have done. (Add any needed dependencies while you are at it.)
+
+  * Install miniconda
+    * `wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh`
+    * `mkdir ~/miniconda3`
+    * `bash Miniconda3-latest-Linux-x86_64.sh -b -u -p ~/miniconda3`
+    * `~/miniconda3/bin/conda init bash`
+    * `rm /Miniconda3-latest-Linux-x86_64.sh`
+  * Install software
+    * `~/miniconda3/bin/conda install -c bioconda fastqc -y`
+    * `~/miniconda3/bin/conda install -c bioconda trimmomatic -y`
+    * `~/miniconda3/bin/conda install -c bioconda bwa -y`
+    * `~/miniconda3/bin/conda install -c bioconda samtools -y`
+    * `~/miniconda3/bin/conda install -c bioconda bcftools -y`
+
+5. Exit from your container and start it back up in the Docker dashboard. Start up a commandline session in your terminal with the following command (where `name-of-container` is the name of your container in Docker dashboard - mine was "*heuristic_driscoll*" when I was testing this):
+
+```
+docker exec -it name-of-container bash
+```
+
+6. Verify that everything was properly installed, and add this closing statement to your `Dockerfile`:
+
+```
+# start with bash
+CMD ["/bin/sh", "-c", "exec bash"]
+```
