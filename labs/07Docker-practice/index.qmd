@@ -55,6 +55,10 @@ RUN apt-get update && apt-get install -y \
 5. Exit from your container and start it back up in the Docker dashboard. Start up a commandline session in your terminal with the following command (where `name-of-container` is the name of your container in Docker dashboard - mine was "*heuristic_driscoll*" when I was testing this):
 
 ```
+# get name of container (or look in Docker Desktop)
+docker ps -a
+
+# start up bash
 docker exec -it name-of-container bash
 ```
 
@@ -64,3 +68,39 @@ docker exec -it name-of-container bash
 # start with bash
 CMD ["/bin/sh", "-c", "exec bash"]
 ```
+
+
+### Running with Singularity
+
+If you are unable to install Docker Desktop on your local computer, you can complete this exercise using Singularity on the cluster.
+
+1. Create and clone the repository to the cluster as described in step 1 above.
+
+2. Start up an Ubuntu VM on the cluster with the following command:
+
+<!-- this presumes singularity is working on the server :P, would still like to get this working -->
+```
+# log into CN001
+srun --pty bash
+
+# start up the container
+singularity run -w -f docker://ubuntu:latest
+```
+
+3. Follow step 3 as described above.
+
+4. Follow step 4 as described above.
+
+5. *skip this step for now*
+
+6. Follow step 6 as described above.
+
+
+<!--
+### Run on Dr Johnson's computer
+
+And, if it isn't working on the server... Log into Dr Johnson's laptop using ssh.
+
+* Need to have an account set up for them.
+* Need to have Docker Desktop running on their account (switch accounts without logging out)
+-->

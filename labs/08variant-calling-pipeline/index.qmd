@@ -1,0 +1,58 @@
+---
+title: "Variant Calling Pipeline"
+format: 
+  html:
+    theme: 
+      light: flatly
+      dark: darkly
+---
+
+During the next two classes we will create a snakemake pipeline following the workflow outlined in the [Variant Calling Workflow](https://datacarpentry.org/wrangling-genomics/) lesson from this week.
+
+Create a GitHub repository for your Snakemake code and add the following files:
+
+* Snakefile
+* .gitignore
+* README.md
+
+Clone your repository to the Hood cluster and create Snakemake rules to perform the variant calling workflow outlined below.
+
+::: {.callout-note}
+Be sure to start a job on the cluster with:
+
+```
+srun --pty bash
+```
+:::
+
+
+The specific commands we would need to execute for the `SRR2584863` sample are:
+
+* Starting working directory
+  * `cd ~/Ecoli`
+
+* Trimming
+  * `trimmomatic PE -threads 1 untrimmed_fastq/SRR2584863_1.fastq.gz untrimmed_fastq/SRR2584863_2.fastq.gz trimmed_fastq/SRR2584863_1.trimmed.fastq trimmed_fastq/SRR2584863_1un.trimmed.fastq trimmed_fastq/SRR2584863_2.trimmed.fastq trimmed_fastq/SRR2584863_2un.trimmed.fastq SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:untrimmed_fastq/NexteraPE-PE.fa:2:40:15`
+
+* Quality control checks
+  * `fastqc -o qc trimmed_fastq/SRR2584863_1.fastq.gz`
+  * `fastqc -o qc trimmed_fastq/SRR2584863_2.fastq.gz`
+  * Print any warnings and errors to `qc/SRR2584863_1.warnings`, `qc/SRR2584863_1.errors`, etc.
+
+* Align reads to reference genome (use the `trimmed_fastq_small` directory during lab)
+  * `bwa mem data/ecoli_rel606.fasta data/trimmed_fastq/SRR2584863_1.trimmed.fastq data/trimmed_fastq_small/SRR2584863_2.trimmed.fastq > results/sam/SRR2584863.aligned.sam`
+  
+* Convert to BAM file
+  * `samtools view -S -b results/sam/SRR2584863.aligned.sam > results/bam/SRR2584863.aligned.bam`
+  
+* Sort BAM file
+  * `samtools sort -o results/bam/SRR2584863.aligned.sorted.bam results/bam/SRR2584863.aligned.bam`
+
+* Calculate read coverage
+  * `bcftools mpileup -O b -o results/bcf/SRR2584863_raw.bcf -f data/ecoli_rel606.fasta results/bam/SRR2584863.aligned.sorted.bam`
+    
+* Detect SNVs
+  * `bcftools call --ploidy 1 -m -v -o results/vcf/SRR2584863_variants.vcf results/bcf/SRR2584863_raw.bcf`
+  
+* Filter SNVs
+  * `vcfutils.pl varFilter results/vcf/SRR2584863_variants.vcf > results/vcf/SRR2584863_final_variants.vcf`

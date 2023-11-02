@@ -144,14 +144,13 @@ schedule <- bind_rows(schedule,
         tibble(Week = 10,
                Date = 'Nov 2', 
                `Coding Demo` = 'Variant Calling Workflow',
-               Lab           = 'Variant Calling Pipeline'))
-# do this over two weeks with https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/05-expansion/index.html in-between, perhaps cover some of https://carpentries-incubator.github.io/snakemake-novice-bioinformatics/06-awkward_programs/index.html between parts 1 and 2 as well.
+               Lab           = '[Variant Calling Pipeline](labs/08variant-calling-pipeline)'))
 
 schedule <- bind_rows(schedule,
         tibble(Week = 11,
                Date = 'Nov 9', 
-               `Coding Demo` = 'Advanced Snakemake', # modules (5, 7 - 9)
-               Lab           = 'Variant Calling Pipeline (cont)'))
+               `Coding Demo` = 'Advanced Snakemake', # modules (5-8)
+               Lab           = '[Variant Calling Pipeline (cont)](labs/08variant-calling-pipeline)'))
 
 #### Bioconductor ####
 
